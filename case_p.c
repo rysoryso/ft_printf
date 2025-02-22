@@ -6,14 +6,14 @@
 /*   By: rnomoto <rnomoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 18:42:23 by rnomoto           #+#    #+#             */
-/*   Updated: 2025/02/22 15:15:38 by rnomoto          ###   ########.fr       */
+/*   Updated: 2025/02/22 15:16:31 by rnomoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 //receive in void * and cast it to intptr_t?
-//receive in intptr_t from the beginning?
+//or receive in intptr_t from the beginning?
 
 static int putaddress(intptr_t adr, int len)
 {
