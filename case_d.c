@@ -12,29 +12,28 @@
 
 #include "ft_printf.h"
 
-static int putnbr_dec(int d, int len)
+static int	putnbr_dec(int d, int len)
 {
-    long d_long;
+	long	d_long;
 
-    d_long = d;
-    if (d_long < 0)
-    {
-        ft_putchar_fd('-', 1);
-        len ++;
-        d_long *= -1;
-    }
-    if (d_long >= 10 )
-        len = putnbr_dec(d_long / 10, len);
-    ft_putchar_fd(d_long % 10 + 48, 1);
-    len ++;
-
-    return (len);
+	d_long = d;
+	if (d_long < 0)
+	{
+		ft_putchar_fd('-', 1);
+		len++;
+		d_long *= -1;
+	}
+	if (d_long >= 10)
+		len = putnbr_dec(d_long / 10, len);
+	ft_putchar_fd(d_long % 10 + 48, 1);
+	len++;
+	return (len);
 }
 
-int case_d(va_list *ap, int len)
+int	case_d(va_list *ap, int len)
 {
-    int d;
+	int	d;
 
-    d = va_arg(*ap, int);
-    return putnbr_dec(d, len);
+	d = va_arg(*ap, int);
+	return (putnbr_dec(d, len));
 }

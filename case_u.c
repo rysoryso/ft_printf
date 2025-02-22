@@ -12,20 +12,19 @@
 
 #include "ft_printf.h"
 
-static int putnbr_unsign(unsigned int nbr, int len)
+static int	putnbr_unsign(unsigned int nbr, int len)
 {
-    if (nbr > 9)
-        len = putnbr_unsign(nbr / 10, len);
-    ft_putchar_fd(nbr % 10 + 48, 1);
-    len ++;
-
-    return len;
+	if (nbr > 9)
+		len = putnbr_unsign(nbr / 10, len);
+	ft_putchar_fd(nbr % 10 + 48, 1);
+	len++;
+	return (len);
 }
 
-int case_u(va_list *ap, int len)
+int	case_u(va_list *ap, int len)
 {
-    unsigned int n;
+	unsigned int	n;
 
-    n = va_arg(*ap, unsigned int);
-    return putnbr_unsign(n, len);
+	n = va_arg(*ap, unsigned int);
+	return (putnbr_unsign(n, len));
 }

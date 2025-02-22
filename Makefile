@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-SRCS = $(wildcard *.c)
+SRCS = ft_printf.c convert.c case_c.c case_s.c case_p.c case_d.c case_u.c case_x.c
 OBJS = $(SRCS:%.c=%.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
