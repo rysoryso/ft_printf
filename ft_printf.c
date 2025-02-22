@@ -6,7 +6,7 @@
 /*   By: rnomoto <rnomoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:34:41 by rnomoto           #+#    #+#             */
-/*   Updated: 2025/02/22 17:25:46 by rnomoto          ###   ########.fr       */
+/*   Updated: 2025/02/22 18:59:23 by rnomoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,17 @@ int	main(void)
 
 	ft = 0;
 	lb = 0;
+
+	//no format
+	ft = ft_printf("ft_printf: Hello World!\n");
+	lb = printf("   printf: Hello World!\n");
+	printf("len_ft: %d\n", ft);
+	printf("len_lb: %d\n", lb);
+	if(ft == lb)
+		printf("OK\n");
+	else
+		printf("KO\n");
+
 	//%c
 	c = 'A';
 	ft = ft_printf("ft_printf: %c\n", c);
@@ -64,6 +75,7 @@ int	main(void)
 		printf("OK\n");
 	else
 		printf("KO\n");
+
 	//%s
 	str = "42Tokyo";
 	ft = ft_printf("ft_printf: %s\n", str);
@@ -74,6 +86,31 @@ int	main(void)
 		printf("OK\n");
 	else
 		printf("KO\n");
+		ft = ft_printf("ft_printf: %s\n", (char *)NULL);
+		lb = printf("   printf: %s\n", (char *)NULL);
+		printf("len_ft: %d\n", ft);
+		printf("len_lb: %d\n", lb);
+		if(ft == lb)
+			printf("OK\n");
+		else
+			printf("KO\n");
+
+		ft = ft_printf("ft_printf: %s\n", "");
+		lb = printf("   printf: %s\n", "");
+		printf("len_ft: %d\n", ft);
+		printf("len_lb: %d\n", lb);
+		if(ft == lb)
+			printf("OK\n");
+		else
+			printf("KO\n");
+			ft = ft_printf("ft_printf: %s\n", (char *)NULL);
+			lb = printf("   printf: %s\n", (char *)NULL);
+			printf("len_ft: %d\n", ft);
+			printf("len_lb: %d\n", lb);
+			if(ft == lb)
+				printf("OK\n");
+			else
+				printf("KO\n");
 	//%p
 	mem = (char *)malloc(10 * sizeof(char));
 	if (mem == NULL)
@@ -90,6 +127,7 @@ int	main(void)
 	else
 		printf("KO\n");
 	free(mem);
+
 	//%d
 	n = -2147483648;
 	ft = ft_printf("ft_printf: %d\n", n);
@@ -100,6 +138,7 @@ int	main(void)
 		printf("OK\n");
 	else
 		printf("KO\n");
+
 	//%u
 	u = 4294967295;
 	ft = ft_printf("ft_printf: %u\n", u);
@@ -110,6 +149,7 @@ int	main(void)
 		printf("OK\n");
 	else
 		printf("KO\n");
+
 	//%x
 	u = 4294967295;
 	ft = ft_printf("ft_printf: %x\n", u);
@@ -120,6 +160,7 @@ int	main(void)
 		printf("OK\n");
 	else
 		printf("KO\n");
+
 	//%X
 	u = 4294967295;
 	ft = ft_printf("ft_printf: %X\n", u);
@@ -130,6 +171,17 @@ int	main(void)
 		printf("OK\n");
 	else
 		printf("KO\n");
+
+	//%%
+	ft = ft_printf("ft_printf: %%\n");
+	lb = printf("   printf: %%\n");
+	printf("len_ft: %d\n", ft);
+	printf("len_lb: %d\n", lb);
+	if(ft == lb)
+		printf("OK\n");
+	else
+		printf("KO\n");
 	return (0);
+
 }
 */
