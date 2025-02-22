@@ -6,7 +6,7 @@
 /*   By: rnomoto <rnomoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:34:00 by rnomoto           #+#    #+#             */
-/*   Updated: 2025/02/22 17:38:08 by rnomoto          ###   ########.fr       */
+/*   Updated: 2025/02/22 18:10:14 by rnomoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	putnbr_hexa(unsigned int n, char *base, int len)
 {
-	if (n > (unsigned int)ft_strlen(base))
-		len = ft_putnbr_base(n / 16, base, len);
+	if (n >= (unsigned int)ft_strlen(base))
+		len = putnbr_hexa(n / 16, base, len);
 	ft_putchar_fd(base[n % 16], 1);
 	len++;
 	return (len);
