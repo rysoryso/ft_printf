@@ -6,7 +6,7 @@
 /*   By: rnomoto <rnomoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 18:42:23 by rnomoto           #+#    #+#             */
-/*   Updated: 2025/02/22 18:29:06 by rnomoto          ###   ########.fr       */
+/*   Updated: 2025/03/11 16:30:30 by rnomoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ int	case_p(va_list *ap, int len)
 	void	*p;
 
 	p = va_arg(*ap, void *);
+	if (p == NULL)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (len + 5);
+	}
 	ft_putstr_fd("0x", 1);
 	len += 2;
 	return (putaddress((uintptr_t)p, len));
