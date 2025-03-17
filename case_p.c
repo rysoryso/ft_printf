@@ -6,7 +6,7 @@
 /*   By: rnomoto <rnomoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 18:42:23 by rnomoto           #+#    #+#             */
-/*   Updated: 2025/03/11 16:30:30 by rnomoto          ###   ########.fr       */
+/*   Updated: 2025/03/17 21:31:34 by rnomoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ static int	putaddress(uintptr_t adr, int len)
 	char	*base;
 
 	base = "0123456789abcdef";
-	if (adr >= 16)
+	if (len == -1)
+		return (-1);
+	else if (adr >= 16)
 		len = putaddress(adr / 16, len);
-	ft_putchar_fd(base[adr % 16], 1);
-	len++;
+	len = print_c(base[adr % 16], len);
 	return (len);
 }
 
@@ -34,10 +35,9 @@ int	case_p(va_list *ap, int len)
 	p = va_arg(*ap, void *);
 	if (p == NULL)
 	{
-		ft_putstr_fd("(nil)", 1);
-		return (len + 5);
+		len = print_s("(nil)", len);
+		return (len);
 	}
-	ft_putstr_fd("0x", 1);
-	len += 2;
+	len = print_s("0x", len);
 	return (putaddress((uintptr_t)p, len));
 }

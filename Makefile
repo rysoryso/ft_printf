@@ -1,5 +1,6 @@
 NAME = libftprintf.a
-SRCS = ft_printf.c convert.c case_c.c case_s.c case_p.c case_d.c case_u.c case_x.c
+SRCS = ft_printf.c convert.c case_c.c case_s.c case_p.c case_d.c case_u.c case_x.c \
+		print_c.c print_s.c
 OBJS = $(SRCS:%.c=%.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

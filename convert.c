@@ -6,7 +6,7 @@
 /*   By: rnomoto <rnomoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:17:19 by rnomoto           #+#    #+#             */
-/*   Updated: 2025/02/22 17:42:17 by rnomoto          ###   ########.fr       */
+/*   Updated: 2025/03/17 21:08:46 by rnomoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@ int	convert(char sign, va_list *ap, int len)
 	else if (sign == 'x' || sign == 'X')
 		len = case_x(ap, len, sign);
 	else if (sign == '%')
-	{
-		ft_putchar_fd('%', 1);
-		len++;
-	}
+		len = print_c('%', len);
+	else
+		return (-1);
 	return (len);
 }

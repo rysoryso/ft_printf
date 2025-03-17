@@ -6,7 +6,7 @@
 /*   By: rnomoto <rnomoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:41:45 by rnomoto           #+#    #+#             */
-/*   Updated: 2025/02/22 17:25:10 by rnomoto          ###   ########.fr       */
+/*   Updated: 2025/03/17 20:30:35 by rnomoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int	case_p(va_list *ap, int len);
 int	case_d(va_list *ap, int len);
 int	case_u(va_list *ap, int len);
 int	case_x(va_list *ap, int len, char sign);
+int	print_c(char c, int len);
+int	print_s(char *str, int len);
 
 #endif
